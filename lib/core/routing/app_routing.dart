@@ -4,8 +4,8 @@ import 'package:fuel_delivery_app/core/routing/routes.dart';
 
 import '../../Features/home/ui/home_screen.dart';
 
-class AppRouting {
-  Route generteRoute(RouteSettings settings) {
+class AppRouter {
+  Route generateRoute(RouteSettings settings) {
     final arguments = settings.arguments;
 
     switch (settings.name) {
