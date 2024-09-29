@@ -1,6 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:fuel_delivery_app/core/routing/routes.dart';
 import 'package:fuel_delivery_app/core/theming/styles.dart';
 
 class DontHaveAccountText extends StatelessWidget {

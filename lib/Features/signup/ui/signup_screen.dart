@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fuel_delivery_app/Features/login/ui/widgets/don\'t_have_account.dart';
 import 'package:fuel_delivery_app/Features/login/ui/widgets/terms_and_conditions_text.dart';
-import 'package:fuel_delivery_app/core/helpers/spacing.dart';
+import 'package:fuel_delivery_app/Features/signup/ui/widgets/already_have_account.dart';
+import 'package:fuel_delivery_app/core/theming/styles.dart';
 import 'package:fuel_delivery_app/core/widgets/app_text_button.dart';
 import 'package:fuel_delivery_app/core/widgets/app_text_form_field.dart';
 
-import '../../../core/theming/styles.dart';
+import '../../../core/helpers/spacing.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignUpScreen> createState() => _SignUPScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignUPScreenState extends State<SignUpScreen> {
   final formkey = GlobalKey<FormState>();
   bool isObsecureText = true;
 
@@ -30,21 +30,23 @@ class _LoginScreenState extends State<LoginScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Welcome Back',
-                  style: TextStyles.font32BlueBold,
+                  'Create Account',
+                  style: TextStyles.font24BlueBold,
                 ),
-                SizedBox(
-                  height: 8.verticalSpace.height,
-                ),
+                verticalSpace(8),
                 Text(
-                  'We\'re excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.',
+                  'Sign up now and start exploring all that our app has to offer. We\'re excited to welcome you to our community!',
                   style: TextStyles.font14GrayRegular,
                 ),
-                verticalSpace(100),
+                verticalSpace(50),
                 Form(
                   key: formkey,
                   child: Column(
                     children: [
+                      AppTextFormField(hintText: 'Name'),
+                      verticalSpace(10),
+                      AppTextFormField(hintText: 'Phone Number'),
+                      verticalSpace(10),
                       AppTextFormField(hintText: 'Email'),
                       verticalSpace(10),
                       AppTextFormField(
@@ -71,13 +73,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       verticalSpace(40),
                       AppTextButton(
-                          buttonText: 'Login',
+                          buttonText: 'Register',
                           textStyle: TextStyles.font18WhiteMedium,
                           onPressed: () {}),
                       verticalSpace(16),
                       const TermsAndConditionsText(),
                       verticalSpace(60),
-                      const DontHaveAccountText(),
+                      const AlreadyHaveAccount(),
                     ],
                   ),
                 ),
