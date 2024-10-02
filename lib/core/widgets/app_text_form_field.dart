@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:fuel_delivery_app/core/theming/colors.dart';
 import 'package:fuel_delivery_app/core/theming/styles.dart';
 
@@ -14,6 +13,8 @@ class AppTextFormField extends StatelessWidget {
   final bool? isObsecureText;
   final Widget? suffixIcon;
   final Color? fillColor;
+  final TextEditingController? controller;
+  final Function(String?) validator;
 
   const AppTextFormField({
     super.key,
@@ -26,11 +27,14 @@ class AppTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.fillColor,
     required this.hintText,
+    this.controller,
+    required this.validator,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       decoration: InputDecoration(
           isDense: true,
           filled: true,
@@ -53,11 +57,22 @@ class AppTextFormField extends StatelessWidget {
                     BorderSide(color: ColorsManager.lighterGray, width: 1.3.w),
                 borderRadius: BorderRadius.circular(16),
               ),
+          errorBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.red, width: 1.3.w),
+            borderRadius: BorderRadius.circular(16),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.red, width: 1.3.w),
+            borderRadius: BorderRadius.circular(16),
+          ),
           hintStyle: hintStyle ?? TextStyles.font14LightGrayRegular,
           hintText: hintText,
           suffixIcon: suffixIcon),
       obscureText: isObsecureText ?? false,
       style: TextStyles.font14DarkBlueMedium,
+      validator: (value) {
+        return validator(value);
+      },
     );
   }
 }

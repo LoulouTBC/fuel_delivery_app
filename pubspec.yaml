@@ -46,7 +46,8 @@ dependencies:
   dio:
   retrofit:
   retrofit_generator:
-
+  flutter_bloc:
+  get_it:
 
 dev_dependencies:
   flutter_test:
