@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fuel_delivery_app/Features/login/logic/cubit/login_cubit.dart';
 import 'package:fuel_delivery_app/Features/login/ui/login_screen.dart';
+import 'package:fuel_delivery_app/Features/signup/logic/cubit/signup_cubit.dart';
+import 'package:fuel_delivery_app/Features/signup/ui/signup_screen.dart';
 import 'package:fuel_delivery_app/core/DI/dependency_injection.dart';
 import 'package:fuel_delivery_app/core/routing/routes.dart';
 
@@ -23,8 +25,13 @@ class AppRouter {
           ),
         );
 
-      // case Routes.signUpScreen:
-      //   return MaterialPageRoute(builder: (_) => SignUpScreen());
+      case Routes.signUpScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<SignupCubit>(),
+            child: const SignUpScreen(),
+          ),
+        );
 
       default:
         return MaterialPageRoute(

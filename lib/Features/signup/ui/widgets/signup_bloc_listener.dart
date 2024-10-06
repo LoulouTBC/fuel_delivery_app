@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fuel_delivery_app/Features/login/logic/cubit/login_cubit.dart';
-import 'package:fuel_delivery_app/Features/login/logic/cubit/login_state.dart';
+import 'package:fuel_delivery_app/Features/signup/logic/cubit/signup_cubit.dart';
+import 'package:fuel_delivery_app/Features/signup/logic/cubit/signup_state.dart';
 import 'package:fuel_delivery_app/core/helpers/extensions.dart';
 import 'package:fuel_delivery_app/core/routing/routes.dart';
 import 'package:fuel_delivery_app/core/theming/colors.dart';
 import 'package:fuel_delivery_app/core/theming/styles.dart';
 
-class LoginBlocListener extends StatelessWidget {
-  const LoginBlocListener({super.key});
+class SignUpBlocListener extends StatelessWidget {
+  const SignUpBlocListener({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<LoginCubit, LoginState>(
+    return BlocListener<SignupCubit, SignUpState>(
       listenWhen: (previous, current) =>
           current is Loading || current is Success || current is Error,
       listener: (context, state) {

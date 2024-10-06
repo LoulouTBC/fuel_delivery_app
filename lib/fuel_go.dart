@@ -21,7 +21,7 @@ class FuelGo extends StatelessWidget {
             scaffoldBackgroundColor: Colors.white,
           ),
           debugShowCheckedModeBanner: false,
-          initialRoute: Routes.loginScreen,
+          initialRoute: Routes.signUpScreen,
           onGenerateRoute: appRouter.generateRoute,
         ));
   }
