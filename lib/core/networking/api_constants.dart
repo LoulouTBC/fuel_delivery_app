@@ -20,4 +20,9 @@ class ApiErrors {
   static const String loadingMessage = "loading_message";
   static const String retryAgainMessage = "retry_again_message";
   static const String ok = "Ok";
+  // static const String nameError = "The name field is required.";
+  // static const String phoneError = "The phone field is required.";
+  // static const String emailError = "The email field is required.";
+  // static const String genderError = "The gender field is required.";
+  // static const String passwordError = "The password field is required.";
 }
