@@ -48,6 +48,8 @@ dependencies:
   retrofit_generator:
   flutter_bloc:
   get_it:
+  google_maps_flutter:
+  
 
 dev_dependencies:
   flutter_test:
