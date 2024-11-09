@@ -15,16 +15,16 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Marker> _marker = [];
 
   final List<Marker> _markerList = [
-    const Marker(
-      markerId: MarkerId('1'),
-      position: LatLng(34.889026624, 35.8865940005),
-      infoWindow: InfoWindow(title: "Lolo"),
-    ),
-    const Marker(
-      markerId: MarkerId('1'),
-      position: LatLng(34.8890483924, 35.88651567005),
-      infoWindow: InfoWindow(title: "Lolo"),
-    ),
+    // const Marker(
+    //   markerId: MarkerId('1'),
+    //   position: LatLng(34.889026624, 35.8865940005),
+    //   infoWindow: InfoWindow(title: "Lolo"),
+    // ),
+    // const Marker(
+    //   markerId: MarkerId('1'),
+    //   position: LatLng(34.8890483924, 35.88651567005),
+    //   infoWindow: InfoWindow(title: "Rama"),
+    // ),
   ];
 
   final CameraPosition _cameraPosition = const CameraPosition(
@@ -45,7 +45,21 @@ class _HomeScreenState extends State<HomeScreen> {
         onMapCreated: (controller) {
           _completer.complete(controller);
         },
-        markers: Set<Marker>.of(_marker),
+        // markers: Set<Marker>.of(_marker),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          GoogleMapController controller = await _completer.future;
+          controller.animateCamera(
+            CameraUpdate.newCameraPosition(
+              CameraPosition(
+                target: LatLng(37.889026624, 35.8865940005),
+                zoom: 14.0,
+              ),
+            ),
+          );
+        },
+        child: const Icon(Icons.location_city),
       ),
     );
   }
