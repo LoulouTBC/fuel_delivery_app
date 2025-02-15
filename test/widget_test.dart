@@ -10,7 +10,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fuel_delivery_app/core/routing/app_routing.dart';
 import 'package:fuel_delivery_app/fuel_go.dart';
 
-import 'package:fuel_delivery_app/main.dart';
+import 'package:fuel_delivery_app/main_development.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
