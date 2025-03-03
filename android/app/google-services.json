@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "238044546348",
+    "project_id": "advanced-app-adfb8",
+    "storage_bucket": "advanced-app-adfb8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238044546348:android:c95e141c6e456351f61889",
+        "android_client_info": {
+          "package_name": "com.example.fuel_delivery_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZhDKT5M_amQXvLsgQ9yIE9fabfU-FPyk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
